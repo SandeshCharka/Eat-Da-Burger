@@ -1,11 +1,21 @@
-var orm = require("./config/orm.js");
+var orm = require("../config/orm.js");
 
-// Select all from the table burgers.
-    orm.selectAll("burgers");
+var burger = {
+    selectAll: function (cb) {
+        orm.selectAll("burgers", function (result) {
+            cb(result);
+        });
+    },
+    insertOne: function (burgerName, cb) {
+        orm.insertOne(burgerName, function (result) {
+            cb(result);
+        });
+    },
+    updateOne: function (eatenTrue, burgerID, cb) {
+        orm.updateOne(eatenTrue, burgerID, function (result) {
+            cb(result);
+        });
+    }
+};
 
-// Insert one burger into the table burgers.
-    orm.insertOne("ChickenCheese Sandwich");
-    
-// Update one burger from the burgers table.
-// Syntax = (newBurgername, oldBurgerName)
-    orm.updateOne("ChickenCheese Sandwich", "YEETO");
+module.exports = burger;

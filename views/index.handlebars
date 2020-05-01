@@ -1,1 +1,44 @@
 <h2>Comondance</h2>
+
+
+<h3>Burgers:</h3>
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <div id="updateBurger">
+        <li>
+            <p>{{burger_name}} <button id={{this.id}} class="eatMe">Eat Me!</button></p>
+        </li>
+    </div>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h3>Eaten Burgers:</h3>
+<ul>{{#each burgers}}
+    {{#if devoured}}
+    <li>
+        <p>{{burger_name}}</p>
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+<h3>Add a Burger:</h3>
+
+<form id="addBurger">
+    <textarea name="addBurgerInput" id=""></textarea>
+    <button type="submit">Add Burger!</button>
+</form>
+
+{{!-- <h3>Update a Burger:</h3>
+
+<form id="">
+    <select name="oldBurger" id="">
+        {{#each burgers}}
+        <option value={{this.id}}>{{burger_name}}</option>
+        {{/each}}
+    </select>
+    <textarea name="updateBurgerInput" id=""></textarea>
+    <button type="submit">Update!</button>
+</form> --}}
