@@ -1,35 +1,40 @@
-<h2>Comondance</h2>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Eat-Da-Burger!</h1>
+        <div class="text-center">
+            <img src="/assets/img/BurgerPngT.png" height="35%" width="35%">
+        </div>
+        <h3>Burgers:</h3>
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <div id="updateBurger">
+                <li>
+                    <p>{{burger_name}} <button id={{this.id}} class="eatMe">Eat Me!</button></p>
+                </li>
+            </div>
+            {{/unless}}
+            {{/each}}
+        </ul>
 
+        <h3>Eaten Burgers:</h3>
+        <ul>{{#each burgers}}
+            {{#if devoured}}
+            <li>
+                <p>{{burger_name}}</p>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
 
-<h3>Burgers:</h3>
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <div id="updateBurger">
-        <li>
-            <p>{{burger_name}} <button id={{this.id}} class="eatMe">Eat Me!</button></p>
-        </li>
+        <h3>Add a Burger:</h3>
+
+        <form id="addBurger">
+            <textarea name="addBurgerInput" id=""></textarea>
+            <button type="submit">Add Burger!</button>
+        </form>
     </div>
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h3>Eaten Burgers:</h3>
-<ul>{{#each burgers}}
-    {{#if devoured}}
-    <li>
-        <p>{{burger_name}}</p>
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h3>Add a Burger:</h3>
-
-<form id="addBurger">
-    <textarea name="addBurgerInput" id=""></textarea>
-    <button type="submit">Add Burger!</button>
-</form>
+</div>
 
 {{!-- <h3>Update a Burger:</h3>
 
