@@ -15,7 +15,12 @@ var burger = {
         orm.updateOne(eatenTrue, burgerID, function (result) {
             cb(result);
         });
-    }
+    },
+    clearAll: function (cb) {
+        orm.clearAll(function (result) {
+            cb(result);
+        });
+    },
 };
 
 module.exports = burger;

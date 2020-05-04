@@ -44,6 +44,13 @@ router.put("/api/burgers/:id", function (req, res) {
     });
 });
 
+router.delete("/api/burgers", function (req, res) {
+
+    burger.clearAll(function (result) {
+        res.status(200).end();
+    });
+});
+
 
 
 module.exports = router;

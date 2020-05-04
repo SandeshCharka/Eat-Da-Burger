@@ -27,24 +27,12 @@ $(function () {
             location.reload();
         })
     });
-
+    $("#clear").on("click", function (event) {
+        event.preventDefault();
+        $.ajax("/api/burgers", {
+            type: "DELETE"
+        }).then(function () {
+            location.reload();
+        })
+    });
 });
-// Update burger Form
-    // $("#updateBurger").on("click", function (event) {
-    //     event.preventDefault();
-
-
-
-    //     var id = $("#updateBurger [name=oldBurger]").val()
-
-    //     var updateBurger = {
-    //         updatedBurger: $("#updateBurger [name=updateBurgerInput]").val().trim()
-    //     };
-
-    //     $.ajax(`/api/burgers/${id}`, {
-    //         type: "PUT",
-    //         data: updateBurger,
-    //     }).then(function () {
-    //         location.reload();
-    //     })
-    // });

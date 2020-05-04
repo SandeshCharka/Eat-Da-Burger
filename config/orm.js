@@ -36,6 +36,15 @@ var orm = {
             cb(result);
         });
     },
+    clearAll: function (cb) {
+        var queryString = "DELETE from burgers"
+
+        connection.query(queryString, function (err, result) {
+            if (err) throw (err);
+            
+            cb(result);
+        });
+    },
 };
 
 
