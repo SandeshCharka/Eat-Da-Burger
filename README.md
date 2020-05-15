@@ -46,7 +46,7 @@ Eat-Da-Burger
 
         -Run the Schema file in mySQL.
 ```
-**Step 4 - Start the application server using the command line below**
+**Step 5 - Start the application server using the command line below**
 ```
 node server.js
 ```
